@@ -174,14 +174,14 @@ p {
 }
 
 /* Contact Section */
-.fab {
+.fab, .fa-regular {
   font-size: 100px;
   margin-right: 50px;
   cursor: pointer;
   color: var(--primary-color);
 }
 
-.fab:hover {
+.fab:hover, .fa-regular:hover {
   color: var(--on-background);
 }
 
