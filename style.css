@@ -11,8 +11,6 @@
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')
-
 [data-theme="dark"] {
   --primary-color: rgb(27, 66, 66);
   --primary-variant:rgb(92, 131, 116);
@@ -22,6 +20,8 @@
   --on-background-alt: rgba(255, 255, 255, 0.7);
   --background: #092635;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')
 
 html {
   box-sizing: border-box;
