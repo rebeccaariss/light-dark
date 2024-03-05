@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 /* Because I am a dev, I created the dark mode palette first 😜 */
 /* The root palette consists of the inverted colour values: */
 :root {
@@ -20,8 +22,6 @@
   --on-background-alt: rgba(255, 255, 255, 0.7);
   --background: #092635;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')
 
 html {
   box-sizing: border-box;
