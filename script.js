@@ -6,9 +6,20 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
+// Dark mode styles
+function darkMode() {
+  nav.style.backgroundColor = 'rgb(0 0 0 / 50%)'; // black
+  textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)'; // white
+  toggleIcon.children[0].textContent = 'Dark Mode';
+  toggleIcon.children[1].classList.remove('fa-sun');
+  toggleIcon.children[1].classList.add('fa-moon');
+}
+
+// Switch theme dynamically
 function switchTheme(event) {
   if (event.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark');
+    darkMode();
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
   }
