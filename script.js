@@ -19,6 +19,19 @@ function darkMode() {
   image3.src = 'images/undraw_engineering_team_dark.svg';
 }
 
+// Light mode styles
+function lightMode() {
+  nav.style.backgroundColor = 'rgb(255 255 255 / 50%)'; // black
+  textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)'; // white
+  toggleIcon.children[0].textContent = 'Light Mode';
+  toggleIcon.children[1].classList.remove('fa-moon');
+  toggleIcon.children[1].classList.add('fa-sun');
+  // Adjust images to be consistent with light mode theme:
+  image1.src = 'images/undraw_dev_focus_light.svg';
+  image2.src = 'images/undraw_prototyping_process_light.svg';
+  image3.src = 'images/undraw_engineering_team_light.svg';
+}
+
 // Switch theme dynamically
 function switchTheme(event) {
   if (event.target.checked) {
@@ -26,6 +39,7 @@ function switchTheme(event) {
     darkMode();
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
+    lightMode();
   }
 }
 
