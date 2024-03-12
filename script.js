@@ -14,22 +14,21 @@ function imageMode(color) {
   image3.src = `images/undraw_engineering_team_${color}.svg`;
 }
 
-// Dark mode styles
-function darkMode() {
-  nav.style.backgroundColor = 'rgb(0 0 0 / 50%)'; // black
-  textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)'; // white
-  toggleIcon.children[0].textContent = 'Dark Mode';
-  toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
-  imageMode('dark');
-}
+function toggleDarkLightMode(isLight) {
+  // nav => white : black
+  nav.style.backgroundColor = isLight ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
 
-// Light mode styles
-function lightMode() {
-  nav.style.backgroundColor = 'rgb(255 255 255 / 50%)'; // black
-  textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)'; // white
-  toggleIcon.children[0].textContent = 'Light Mode';
-  toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-  imageMode('light');
+  // textBox => black : white
+  textBox.style.backgroundColor = isLight? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
+
+  // text indicator => Light Mode : Dark Mode
+  toggleIcon.children[0].textContent = isLight ? 'Light Mode' : 'Dark Mode';
+  
+  // icon indicator => moon to sun : sun to moon
+  isLight ? toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun') : toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
+  
+  // image colour palettes => light : dark
+  isLight ? imageMode('light') : imageMode('dark');
 }
 
 // Switch theme dynamically
@@ -37,11 +36,11 @@ function switchTheme(event) {
   if (event.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
-    darkMode();
+    toggleDarkLightMode(false);
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
-    lightMode();
+    toggleDarkLightMode(true);
   }
 }
 
@@ -56,6 +55,6 @@ if (currentTheme) {
   // Necessary for toggleSwitch and images to match theme if currentTheme exists:
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true;
-    darkMode();
+    toggleDarkLightMode(false);
   }
 }
